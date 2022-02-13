@@ -1,0 +1,4 @@
+FROM node
+COPY . .
+ENTRYPOINT npm run start
+EXPOSE 3000
