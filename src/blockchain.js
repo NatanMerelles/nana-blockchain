@@ -77,10 +77,9 @@ class Blockchain {
   }
 
   mineBlock(block) {
-    let nonce = 0;
     const startTime = +new Date();
 
-    while (1) {
+    for (let nonce = 0; ; nonce++) {
       const blockHash = hash(JSON.stringify(block))
       const proofingHash = hash(blockHash + nonce);
 
@@ -96,8 +95,6 @@ class Blockchain {
 
         return
       }
-
-      nonce++;
     }
   }
 }
